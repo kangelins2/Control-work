@@ -13,15 +13,25 @@ test_lst = [
     [22, 23, None],
 ]
 
-new_lst = []
-for i in test_lst:
-    _new_lst = []
-    for b in i:
-        if b is not None:
-            _new_lst.append(b)
-        else:
-            _new_lst.append(0)
-    new_lst.append(_new_lst)
+# new_lst = []
+# for i in test_lst:
+#     _new_lst = []
+#     for b in i:
+#         if b is not None:
+#             _new_lst.append(b)
+#         else:
+#             _new_lst.append(0)
+#     new_lst.append(_new_lst)
+#
+
+new_lst = [
+    [
+        b if b is not None else 0
+        for b in i
+    ]
+    for i in test_lst
+]
+
 
 print(new_lst)
 

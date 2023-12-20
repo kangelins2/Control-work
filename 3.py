@@ -1,5 +1,5 @@
 """
-Напишите генератор, который принимает 2 параметра
+Напишите генератор, который принимает 2 параметра.
 (Пусть это будет образно генератор который делит продукцию максимально поровну на склады)
 1 - количество возвращаемых значений (складов)
 2 - количество продукции (продукции)
@@ -21,7 +21,7 @@
 -> 1
 -> 1
 -> 0
-Чтобы проверить работу можно использовать функцию ниже
+Что бы проверить работу можно использовать функцию ниже
 
 """
 
@@ -37,42 +37,28 @@ def check(func, a, b):
 
 check(test, 5, 5)
 
-def divide_products(num_products, num_warehouses):
-  """
-  Разделяет продукцию максимально поровну на склады.
 
-  Args:
-    num_products: Количество продукции.
-    num_warehouses: Количество складов.
-
-  Returns:
-    Генератор, который возвращает количество продукции, отправленное на каждый склад.
-  """
-
-  if num_warehouses > num_products:
-    num_warehouses = num_products
-  remainder = num_products % num_warehouses
-  products_per_warehouse = num_products // num_warehouses
-  for i in range(num_warehouses):
-    if i < remainder:
-      yield products_per_warehouse + 1
-    else:
-      yield products_per_warehouse
-
-
-def test_divide_products():
-  """
-  Проверяет работу генератора.
-  """
-
-  assert list(divide_products(100, 5)) == [20, 20, 20, 20, 20]
-  assert list(divide_products(97, 5)) == [19, 19, 19, 20, 20]
-  assert list(divide_products(2, 3)) == [1, 1, 0]
-
-
-if __name__ == "__main__":
-  test_divide_products()
-
-products = divide_products(100, 5)
-for product in products:
-  print(product)
+# def divide_products(num_warehouses, num_products):
+#   remainder = num_products % num_warehouses
+#   for i in range(num_warehouses):
+#     if i < remainder:
+#       yield num_products // num_warehouses + 1
+#     else:
+#       yield num_products // num_warehouses
+#
+#
+#
+#
+#
+# def test_divide_products():
+#   """
+#   Проверяет работу генератора.
+#   """
+#
+#
+# print(list(divide_products(5, 100)))  # == [20, 20, 20, 20, 20]
+# print(list(divide_products(5, 97)))  # == [19, 19, 19, 20, 20]
+# print(list(divide_products(3, 2)))  # == [1, 1, 0]
+#
+# if __name__ == "__main__":
+#     test_divide_products()
