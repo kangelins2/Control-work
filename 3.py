@@ -38,27 +38,27 @@ def check(func, a, b):
 check(test, 5, 5)
 
 
-# def divide_products(num_warehouses, num_products):
-#   remainder = num_products % num_warehouses
-#   for i in range(num_warehouses):
-#     if i < remainder:
-#       yield num_products // num_warehouses + 1
-#     else:
-#       yield num_products // num_warehouses
-#
-#
-#
-#
-#
-# def test_divide_products():
-#   """
-#   Проверяет работу генератора.
-#   """
-#
-#
-# print(list(divide_products(5, 100)))  # == [20, 20, 20, 20, 20]
-# print(list(divide_products(5, 97)))  # == [19, 19, 19, 20, 20]
-# print(list(divide_products(3, 2)))  # == [1, 1, 0]
-#
-# if __name__ == "__main__":
-#     test_divide_products()
+def divide_products(num_warehouses, num_products):
+  remainder = num_products % num_warehouses
+  for i in range(num_warehouses):
+    if i < remainder:
+      yield num_products // num_warehouses + 1
+    else:
+      yield num_products // num_warehouses
+
+
+
+
+
+def test_divide_products():
+  """
+  Проверяет работу генератора.
+  """
+
+
+print(list(divide_products(5, 100)))  # == [20, 20, 20, 20, 20]
+print(list(divide_products(5, 97)))  # == [19, 19, 19, 20, 20]
+print(list(divide_products(3, 2)))  # == [1, 1, 0]
+
+if __name__ == "__main__":
+    test_divide_products()

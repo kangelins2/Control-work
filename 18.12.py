@@ -49,14 +49,14 @@
 # field.print()
 
 
-задание 4
+# задание 4
 class Person:
     def __init__(self, firs_name, last_name, birthday: date):
         self.first_name = firs_name
         self.last_name = last_name
         self.birthday = birthday
 
-    def get_fuii_name(self):
+    def get_full_name(self):
         return f"{self.first_name} {self.last_name}"
 
     def get
